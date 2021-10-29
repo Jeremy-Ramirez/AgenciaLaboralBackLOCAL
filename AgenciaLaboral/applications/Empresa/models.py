@@ -20,7 +20,7 @@ class Empresa(models.Model):
     referencia = models.CharField(max_length=45, blank=True, null=True)
     telefonooficina = models.CharField(db_column='telefonoOficina', max_length=45, blank=True, null=True)  # Field name made lowercase.
     celular = models.CharField(max_length=45, blank=True, null=True)
-    correoelectronico = models.CharField(db_column='correoElectronico', max_length=45, unique=True, null=True)  # Field name made lowercase.
+    correo = models.CharField(db_column='correo', max_length=45, unique=True, null=True)  # Field name made lowercase.
     contrasenia = models.CharField(max_length=16, blank=True, null=True)    
     paginaweb = models.CharField(db_column='paginaWeb', max_length=45, blank=True, null=True)  # Field name made lowercase.
     tipodocumento_idtipodocumento = models.ForeignKey(Tipodocumento, models.DO_NOTHING, db_column='tipoDocumento_idtipoDocumento', null = True)  # Field name made lowercase.
@@ -43,7 +43,7 @@ class Empresa(models.Model):
         except:
             return None
     
-    USERNAME_FIELD='correoelectronico'
+    USERNAME_FIELD='correo'
     REQUIRED_FIELDS=[]
 
     class Meta:

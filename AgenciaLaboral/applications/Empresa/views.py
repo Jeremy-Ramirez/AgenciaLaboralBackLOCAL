@@ -45,10 +45,10 @@ class EmpresaApiView(APIView):
 class LoginView(APIView):
 
     def post(self,request):
-        correoelectronico= request.data['correoelectronico']
+        correo= request.data['correo']
         contrasenia = request.data['contrasenia']
 
-        user= Empresa.objects.filter(correoelectronico=correoelectronico).first()
+        user= Empresa.objects.filter(correo=correo).first()
         contra= Empresa.objects.filter(contrasenia=contrasenia).first()
         if user is None:
             raise AuthenticationFailed('User not found!')

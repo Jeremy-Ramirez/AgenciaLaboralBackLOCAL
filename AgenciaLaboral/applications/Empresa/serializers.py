@@ -30,7 +30,7 @@ class EmpresaSerializer(serializers.ModelSerializer):
         instance.referencia = validated_data.get('referencia', instance.referencia)
         instance.telefonooficina = validated_data.get('telefonooficina', instance.telefonooficina)
         instance.celular = validated_data.get('celular', instance.celular)
-        instance.correoelectronico = validated_data.get('correoelectronico', instance.correoelectronico)
+        instance.correo = validated_data.get('correo', instance.correo)
         instance.contrasenia = validated_data.get('contrasenia', instance.contrasenia)
         instance.paginaweb = validated_data.get('paginaweb', instance.paginaweb)
         instance.tipodocumento_idtipodocumento = validated_data.get('tipodocumento_idtipodocumento', instance.tipodocumento_idtipodocumento)
