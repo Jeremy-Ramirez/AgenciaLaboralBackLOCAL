@@ -72,7 +72,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
         instance.correo = validated_data.get('correo',instance.correo)
         instance.telefono = validated_data.get('telefono',instance.telefono)
         instance.direccion = validated_data.get('direccion',instance.direccion)
-        instance.estadocuenta = validated_data.get('estadocuenta',instance.estadocuenta)
+        instance.estado_idestado = validated_data.get('estado_idestado',instance.estado_idestado)
         instance.genero_idgenero =validated_data.get('genero_idgenero',instance.genero_idgenero)  # Field name made lowercase.
         instance.rol_idrol = validated_data.get('rol_idrol',instance.rol_idrol) # Field name made lowercase.
         instance.estadocivil_idestadocivil = validated_data.get('estadocivil_idestadocivil',instance.estadocivil_idestadocivil) # Field name made lowercase.

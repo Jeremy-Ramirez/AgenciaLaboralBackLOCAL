@@ -12,8 +12,8 @@ class Solicitud(models.Model):
     rangoedad = models.CharField(db_column='rangoEdad', max_length=45, blank=True, null=True)  # Field name made lowercase.
     experticia = models.CharField(max_length=45, blank=True, null=True)
     sueldo = models.FloatField(blank=True, null=True)
-    fechainicio = models.DateTimeField(db_column='fechaInicio', blank=True, null=True)  # Field name made lowercase.
-    fechacierre = models.DateTimeField(db_column='fechaCierre', blank=True, null=True)  # Field name made lowercase.
+    fechainicio = models.DateField(db_column='fechaInicio', blank=True, null=True)  # Field name made lowercase.
+    fechacierre = models.DateField(db_column='fechaCierre', blank=True, null=True)  # Field name made lowercase.
     cargo = models.CharField(max_length=100, blank=True, null=True)
     descripcioncargo = models.TextField(db_column='descripcionCargo', blank=True, null=True)  
     tiposolicitud_idtiposolicitud = models.ForeignKey(Tiposolicitud, models.DO_NOTHING, db_column='TipoSolicitud_idTipoSolicitud', null = True)  # Field name made lowercase.

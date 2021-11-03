@@ -28,3 +28,12 @@ class AspiranteApiView(APIView):
             aspirante_serializer.save()
             return Response(aspirante_serializer.data, status=status.HTTP_201_CREATED)
         return Response(aspirante_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+    def put(self, request, pk):
+        aspirante = get_object_or_404(Aspirante.objects.all(),pk=pk)
+        aspirante_serializer = AspiranteSerializer(aspirante, data=request.data, many=False)
+        if aspirante_serializer.is_valid(raise_exception=True):
+            aspirante_serializer.save()
+            return Response(aspirante_serializer.data)
+        return Response(aspirante_serializer.errors, status=status.HTTP_400_BAD_REQUEST)

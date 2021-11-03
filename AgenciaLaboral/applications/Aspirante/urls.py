@@ -6,6 +6,6 @@ from .views import *
 urlpatterns = [
   
      path('aspirantes/', views.AspiranteApiView.as_view(), name='aspirantes api'),
-     #path('usuarios/<int:pk>', views.UsuarioApiView.as_view()),
+     path('aspirantes/<int:pk>', views.AspiranteApiView.as_view()),
    
 ]

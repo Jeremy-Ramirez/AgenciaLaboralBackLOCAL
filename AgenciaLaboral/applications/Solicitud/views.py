@@ -26,7 +26,7 @@ class SolicitudApiView(APIView):
         serializer = SolicitudSerializer(data=solicitud)
         if serializer.is_valid(raise_exception=True):
             solicitud_saved = serializer.save()
-        return Response({"success": "Solicitud '{}' created successfully".format(solicitud_saved.descripcion)})
+        return Response({"success": "Solicitud '{}' created successfully".format(solicitud_saved.descripcioncargo)})
   
   def put(self, request, pk):
         saved_solicitud = get_object_or_404(Solicitud.objects.all(), pk=pk)
@@ -35,7 +35,7 @@ class SolicitudApiView(APIView):
 
         if serializer.is_valid(raise_exception=True):
             solicitud_saved = serializer.save()
-        return Response({"success": "Solicitud '{}' updated successfully".format(solicitud_saved.descripcion)})
+        return Response({"success": "Solicitud '{}' updated successfully".format(solicitud_saved.descripcioncargo)})
   
   def delete(self, request, pk):
         solicitud = get_object_or_404(Solicitud.objects.all(), pk=pk)

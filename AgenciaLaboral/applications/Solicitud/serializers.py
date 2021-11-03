@@ -6,7 +6,7 @@ class SolicitudSerializer(serializers.ModelSerializer):
     class Meta:
         model=Solicitud
         fields='__all__'
-        depth = 2
+        #depth = 2
     
     
     def create(self,validated_data):
