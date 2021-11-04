@@ -20,6 +20,7 @@ class Aspirante(models.Model):
     posibilidadcambioresidencia = models.CharField(max_length=5,db_column='posibilidadCambioResidencia', blank=True, null=True)  # Field name made lowercase.
     estadoestudios = models.CharField(max_length=5,db_column='estadoEstudios', blank=True, null=True)  # Field name made lowercase.
     profesiones_idprofesiones = models.ForeignKey(Profesiones, models.DO_NOTHING, db_column='Profesiones_idProfesiones', null=True)  # Field name made lowercase.
+    idiomas = models.CharField(max_length=500,db_column='idiomas', blank=True, null=True)  # Field name made lowercase.
     nivelestudios_idnivelestudios = models.ForeignKey(NivelEstudios, models.DO_NOTHING, db_column='NivelEstudios_idNivelEstudios', null=True)  # Field name made lowercase.
     usuario_idusuario = models.ForeignKey(Usuario, models.DO_NOTHING, db_column='usuario_idusuario',null=True) # Field name made lowercase.
     
