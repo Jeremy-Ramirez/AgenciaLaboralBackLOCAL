@@ -1,4 +1,4 @@
-from applications.NivelEstudios.serializers import EstadoEstudiosSerializer
+
 from django.urls import path, include
 from . import views
 from .views import *
