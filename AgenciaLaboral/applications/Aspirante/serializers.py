@@ -26,6 +26,8 @@ class AspiranteSerializer(serializers.ModelSerializer):
         instance.posibilidadviajar = validated_data.get('posibilidadviajar',instance.posibilidadviajar)
         instance.posibilidadcambioresidencia = validated_data.get('posibilidadcambioresidencia',instance.posibilidadcambioresidencia)
         instance.estadoestudios = validated_data.get('estadoestudios',instance.estadoestudios)
+        instance.profesiones_idprofesiones = validated_data.get('profesiones_idprofesiones',instance.profesiones_idprofesiones)
+        instance.idiomas = validated_data.get('idiomas',instance.idiomas)
         instance.nivelestudios_idnivelestudios = validated_data.get('nivelestudios_idnivelestudios',instance.nivelestudios_idnivelestudios)
         instance.profesiones_idprofesiones = validated_data.get('profesiones_idprofesiones',instance.profesiones_idprofesiones)
         instance.usuario_idusuario = validated_data.get('usuario_idusuario',instance.usuario_idusuario)
