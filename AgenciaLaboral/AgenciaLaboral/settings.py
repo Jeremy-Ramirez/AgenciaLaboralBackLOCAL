@@ -123,7 +123,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'agenciadb',
         'USER':'root',
-        'PASSWORD':'admin'
+        'PASSWORD':'Bakugo_23y24'
     }
 }
 
