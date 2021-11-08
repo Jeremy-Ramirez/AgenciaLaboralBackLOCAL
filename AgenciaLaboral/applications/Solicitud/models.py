@@ -32,8 +32,8 @@ class Solicitud(models.Model):
     idiomas =   models.CharField(max_length=45, blank=True, null=True)
 
     def __str__(self):
-        txt = " Profesion: {0} / Cargo: {1} "
-        return txt.format(self.profesion , self.cargo) 
+        txt = "Cargo: {0} "
+        return txt.format(self.cargo) 
 
     class Meta:
         verbose_name='Solicitud'
@@ -41,6 +41,6 @@ class Solicitud(models.Model):
         db_table = 'solicitud'
 
         def __str__(self):
-            txt = " Profesion: {0} / Cargo: {1} "
-            return txt.format(self.profesion , self.cargo) 
+            txt = "Cargo: {0} "
+            return txt.format(self.cargo) 
         
