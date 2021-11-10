@@ -5,7 +5,7 @@ from .views import *
 
 urlpatterns = [
   
-     path('sugerencias/', views.SugerenciaApiView.as_view(), name='usuarios api'),
+     path('sugerencias/', views.SugerenciaApiView.as_view(), name='Sugerencias api'),
      path('sugerencias/<int:pk>', views.SugerenciaApiView.as_view()),
    
 ]
