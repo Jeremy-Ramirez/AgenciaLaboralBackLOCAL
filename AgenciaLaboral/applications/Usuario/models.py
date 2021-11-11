@@ -12,7 +12,7 @@ class Usuario(models.Model):
     nombreusuario = models.CharField(db_column='nombreUsuario', max_length=45, blank=True, null=True)  # Field name made lowercase.
     contrasenia = models.CharField(max_length=150, blank=True, null=True)
     tipodocumento_idtipodocumento = models.ForeignKey(Tipodocumento, models.DO_NOTHING, db_column='tipodocumento_idtipodocumento',null=True)  # Field name made lowercase.
-    nodocumento = models.CharField(max_length=45, blank=True, null=True)
+    nodocumento = models.CharField(max_length=45, blank=True, null=True, unique=True)
     nombre = models.CharField(max_length=45, blank=True, null=True)
     apellido = models.CharField(max_length=45, blank=True, null=True)
     correo = models.CharField(max_length=45, blank=True, null=True, unique=True)
