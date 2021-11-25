@@ -39,6 +39,14 @@ class UsuarioApiView(APIView):
             usuario_serializer.save()
             return Response(usuario_serializer.data)
         return Response(usuario_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+  def patch(self, request, pk):
+        usuario = get_object_or_404(Usuario.objects.all(),pk=pk)
+        usuario_serializer = UsuarioSerializer(usuario, data=request.data, partial=True) # set partial=True to update a data partially
+        if usuario_serializer.is_valid():
+            usuario_serializer.save()
+            return Response(usuario_serializer.data)
+        return Response(usuario_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
        
 class LoginView(APIView):
