@@ -41,7 +41,7 @@ class EmpresaSerializer(serializers.ModelSerializer):
         instance.tipoempresa_idtipoempresa = validated_data.get('tipoempresa_idtipoempresa', instance.tipoempresa_idtipoempresa)
         instance.provincia_idprovincia = validated_data.get('provincia_idprovincia', instance.provincia_idprovincia)
         instance.ciudad_idciudad = validated_data.get('ciudad_idciudad', instance.ciudad_idciudad)
-
-
+        instance.estado_idestado = validated_data.get('estado_idestado', instance.estado_idestado)
+        
         instance.save()
         return instance

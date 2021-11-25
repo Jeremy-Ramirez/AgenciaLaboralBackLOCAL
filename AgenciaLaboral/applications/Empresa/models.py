@@ -7,7 +7,7 @@ from applications.Sector.models import Sector
 from applications.Tipoempresa.models import Tipoempresa
 from applications.Ciudad.models import Ciudad
 from applications.Provincia.models import Provincia
-
+from applications.Estado.models import Estado
 class Empresa(models.Model):
     idempresa = models.AutoField(db_column='idEmpresa', primary_key=True)  # Field name made lowercase.
     ruc_cedula = models.CharField(db_column='ruc/cedula', max_length=45, unique=True, null=True)  # Field renamed to remove unsuitable characters.
@@ -31,7 +31,7 @@ class Empresa(models.Model):
     tipoempresa_idtipoempresa = models.ForeignKey(Tipoempresa, models.DO_NOTHING, db_column='tipoEmpresa_idtipoEmpresa', null = True)  # Field name made lowercase.
     provincia_idprovincia = models.ForeignKey(Provincia, models.DO_NOTHING, db_column='provincia_idProvincia', null=True)  # Field name made lowercase.
     ciudad_idciudad = models.ForeignKey(Ciudad, models.DO_NOTHING, db_column='ciudad_idCiudad', null=True)  # Field name made lowercase.
- 
+    estado_idestado = models.ForeignKey(Estado, models.DO_NOTHING, db_column='Estado_idEstado', null = True) 
     def __str__(self):
         txt = " Ruc/Cédula: {0} / Nombre Comercial: {1} "
         return txt.format(self.ruc_cedula , self.nombrecomercial) 
