@@ -37,3 +37,11 @@ class AspiranteApiView(APIView):
             aspirante_serializer.save()
             return Response(aspirante_serializer.data)
         return Response(aspirante_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def patch(self, request, pk):
+        aspirante = get_object_or_404(Aspirante.objects.all(),pk=pk)
+        aspirante_serializer = AspiranteSerializer(aspirante, data=request.data, partial=True) # set partial=True to update a data partially
+        if aspirante_serializer.is_valid():
+            aspirante_serializer.save()
+            return Response(aspirante_serializer.data)
+        return Response(aspirante_serializer.errors, status=status.HTTP_400_BAD_REQUEST)

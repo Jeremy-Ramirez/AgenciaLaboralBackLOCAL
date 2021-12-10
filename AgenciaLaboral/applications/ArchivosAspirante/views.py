@@ -38,3 +38,8 @@ class ArchivosAspiranteApiView(APIView):
             archivosAspirantes_serializer.save()
             return Response(archivosAspirantes_serializer.data)
         return Response(archivosAspirantes_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+  def delete(self, request, pk):
+        archivoAspirante = get_object_or_404(ArchivosAspirante.objects.all(), pk=pk)
+        archivoAspirante.delete()
+        return Response({"message": "El archivo con id `{}` ha sido eliminado.".format(pk)},status=204)
