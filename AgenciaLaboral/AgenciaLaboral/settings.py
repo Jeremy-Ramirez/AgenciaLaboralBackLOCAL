@@ -70,6 +70,8 @@ INSTALLED_APPS = [
     'applications.Usuario',
     'applications.NivelEstudios',
     'applications.SugerenciaEmpresa',
+    'applications.EstadoAspirantes',
+    'applications.FormacionProfesional',
     'rest_framework',
     'home'
 
