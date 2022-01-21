@@ -71,7 +71,9 @@ INSTALLED_APPS = [
     'applications.NivelEstudios',
     'applications.SugerenciaEmpresa',
     'applications.EstadoAspirantes',
+    'applications.EstadoAspiranteEmpresa',
     'applications.FormacionProfesional',
+    'applications.DuracionPaquetes',
     'rest_framework',
     'home'
 
@@ -126,7 +128,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'agenciadb',
         'USER':'root',
-        'PASSWORD':'admin'
+        'PASSWORD':'Bakugo_23y24'
     }
 }
 

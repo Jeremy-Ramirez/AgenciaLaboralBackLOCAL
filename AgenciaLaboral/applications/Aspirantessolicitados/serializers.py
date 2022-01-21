@@ -16,7 +16,7 @@ class AspirantessolicitadosSerializer(serializers.ModelSerializer):
         instance.solicitud_idsolicitud = validated_data.get('solicitud_idsolicitud', instance.solicitud_idsolicitud)
         instance.estado_idestado = validated_data.get('estado_idestado', instance.estado_idestado)
         instance.aspirante_idaspirante = validated_data.get('aspirante_idaspirante', instance.aspirante_idaspirante)
-
+        instance.estadoaspiranteempresa_idestadoaspiranteempresa = validated_data.get('estadoaspiranteempresa_idestadoaspiranteempresa', instance.estadoaspiranteempresa_idestadoaspiranteempresa)
 
         instance.save()
         return instance

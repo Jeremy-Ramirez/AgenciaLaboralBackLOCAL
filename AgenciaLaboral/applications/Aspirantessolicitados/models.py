@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 from applications.Solicitud.models import Solicitud
 from applications.Estado.models import Estado
+from applications.EstadoAspiranteEmpresa.models import EstadoAspiranteEmpresa
 from applications.Aspirante.models import Aspirante
 
 class Aspirantessolicitados(models.Model):
@@ -10,6 +11,8 @@ class Aspirantessolicitados(models.Model):
     fechaaceptacion = models.DateTimeField(db_column='fechaAceptacion', blank=True, null=True)  # Field name made lowercase.
     solicitud_idsolicitud = models.ForeignKey(Solicitud, models.DO_NOTHING, db_column='Solicitud_idSolicitud')  # Field name made lowercase.
     estado_idestado = models.ForeignKey(Estado, models.DO_NOTHING, db_column='Estado_idEstado')  # Field name made lowercase.
+    estadoaspiranteempresa_idestadoaspiranteempresa = models.ForeignKey(EstadoAspiranteEmpresa, models.DO_NOTHING, db_column='EstadoAspiranteEmpresa_idEstadoAspiranteEmpresa', null=True)  # Field name made lowercase.
+
     aspirante_idaspirante = models.ForeignKey(Aspirante, models.DO_NOTHING, db_column='Aspirante_idaspirante' , null = True)  # Field name made lowercase.
     
     def __str__(self):

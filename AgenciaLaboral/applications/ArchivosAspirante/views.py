@@ -32,8 +32,8 @@ class ArchivosAspiranteApiView(APIView):
         return Response(archivosAspirantes_serializer.data)
 
   def put(self, request, pk):
-        usuario = get_object_or_404(ArchivosAspirante.objects.all(),pk=pk)
-        archivosAspirantes_serializer = ArchivosAspirantesSerializer(usuario, data=request.data, many=False)
+        archivoAspirante = get_object_or_404(ArchivosAspirante.objects.all(),pk=pk)
+        archivosAspirantes_serializer = ArchivosAspirantesSerializer(archivoAspirante, data=request.data, many=False)
         if archivosAspirantes_serializer.is_valid(raise_exception=True):
             archivosAspirantes_serializer.save()
             return Response(archivosAspirantes_serializer.data)

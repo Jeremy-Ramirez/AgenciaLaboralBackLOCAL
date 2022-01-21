@@ -38,6 +38,8 @@ urlpatterns = [
     path('api/',include('applications.Sugerencia.urls')),
     path('api/',include('applications.SugerenciaEmpresa.urls')),
     path('api/',include('applications.Aspirante.urls')),
+    path('api/',include('applications.Paquetepago.urls')),
+    path('api/',include('applications.DuracionPaquetes.urls')),
     path('api/',include('applications.Profesiones.urls')),
     path('api/',include('applications.Estadocivil.urls')),
     path('api/',include('applications.Aspirantessolicitados.urls')),
@@ -46,6 +48,7 @@ urlpatterns = [
     path('api/',include('applications.NivelEstudios.urls')),
     path('api/',include('applications.FormacionProfesional.urls')),
     path('api/',include('applications.EstadoAspirantes.urls')),
+    path('api/',include('applications.EstadoAspiranteEmpresa.urls')),
     path('', include('home.urls'))
 
 ]

@@ -38,3 +38,11 @@ class AspirantessolicitadosApiView(APIView):
         aspirantessolicitados = get_object_or_404(Aspirantessolicitados.objects.all(), pk=pk)
         aspirantessolicitados.delete()
         return Response({"message": "Aspirantessolicitados with id `{}` has been deleted.".format(pk)},status=204)
+
+  def patch(self, request, pk):
+        aspirante = get_object_or_404(Aspirantessolicitados.objects.all(),pk=pk)
+        aspirante_serializer = AspirantessolicitadosSerializer(aspirante, data=request.data, partial=True) # set partial=True to update a data partially
+        if aspirante_serializer.is_valid():
+            aspirante_serializer.save()
+            return Response(aspirante_serializer.data)
+        return Response(aspirante_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
